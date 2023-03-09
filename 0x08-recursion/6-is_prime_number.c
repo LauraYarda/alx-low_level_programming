@@ -2,8 +2,8 @@
 #include <stdio.h>
 /**
  * check_prime -  Checks if a number is divisible
- * @num: The number to be checked
- * @div: The divisor
+ * @n: The number to be checked
+ * @d: The divisor
  *
  *  Return: If the number is divisible - 0
  *  If the number is not divisible - 1

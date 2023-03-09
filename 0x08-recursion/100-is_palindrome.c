@@ -37,7 +37,7 @@ return (1);
 return (0 + comparator(s, a + 1, b - 1));
 
 }
-return (0)
+return (0);
 }
 
 /**
@@ -45,11 +45,8 @@ return (0)
 * @s: string
 * Return: 1 if s is a palindrome, 0 if not
 */
-
-int is_palindrome(char *s);
-
+int is_palindrome(char *s)
 {
-
 if (*s == '\0')
 
 return (1);

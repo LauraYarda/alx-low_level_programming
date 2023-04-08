@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * read_textfile- Read text file print to STDOUT
  * @filename: text file being read
@@ -9,22 +10,19 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *fp = NULL;
-	size_t count = 0;
-	size_t c;
+	char *buf;
+	ssize_t fp;
+	ssize_t written;
+	ssize_t r;
 
-	fp = fopen(filename, "r");
-	if (fp == NULL)
-	{
+	fp = open(filename, O_RDONLY);
+	if (fp == -1)
 	return (0);
-	}
+	buf = malloc(sizeof(char) * letters);
+	r = read(fp, buf, letters);
+	written = write(STDOUT_FILENO, buf, r);
+	free(buf);
 
-	while ((!feof(fp)) && count < letters)
-	{
-	c = fgetc(fp);
-	putchar(c);
-	count++;
-	}
-	fclose(fp);
-	return (count);
+close(fp);
+return (written);
 }

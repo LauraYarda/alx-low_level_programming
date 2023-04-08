@@ -9,9 +9,9 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	FILE* fp = fopen(filename, "a");
+	FILE *fp = fopen(filename, "a");
 	int res;
-	
+
 	if (fp == NULL)
 	return (-1);
 
@@ -20,5 +20,5 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	 res = fputs(text_content, fp);
 	fclose(fp);
-	return (res != EOF) ? 1 : -1;
+	return ((res != EOF) ? 1 : -1);
 }

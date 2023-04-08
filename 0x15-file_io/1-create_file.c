@@ -10,7 +10,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	FILE* file = fopen(filename, "w");
+	FILE *file = fopen(filename, "w");
 	int text_len, written = 0;
 
 	if (filename == NULL)
@@ -18,7 +18,7 @@ int create_file(const char *filename, char *text_content)
 
 	if (file == NULL)
 	{
-	return -1;
+	return (-1);
 	}
 	if (text_content != NULL)
 	text_len = strlen(text_content);
@@ -36,5 +36,5 @@ int create_file(const char *filename, char *text_content)
 	{
 	return (-1);
 }
- return (1);
- }
+return (1);
+}
